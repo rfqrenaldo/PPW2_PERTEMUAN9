@@ -39,6 +39,7 @@ class BukuController extends Controller
             'penulis' => 'required|string|max:30',
             'harga' => 'required|numeric',
             'tgl_terbit' => 'required|date',
+            'photo'=> "required|string"
         ],[
             'judul.required' =>"MOHON ISI JUDUL BUKU!",
             "penulis.max" => "MOHON ISI NAMA PENULIS BUKU!",
@@ -50,6 +51,7 @@ class BukuController extends Controller
         $buku->penulis = $request->penulis;
         $buku->harga = $request->harga;
         $buku->tgl_terbit = $request->tgl_terbit;
+        $buku->photo= $request->photo;
         $buku->save();
         return redirect('/buku')->with('pesan','Data buku berhasil disimpan');
     }

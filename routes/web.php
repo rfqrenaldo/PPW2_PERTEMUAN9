@@ -2,6 +2,8 @@
 use App\Http\Controllers\Auth\LoginRegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\SendEmailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +37,5 @@ Route::get('/buku/search', [BukuController::class,'search'])->name('buku.search'
 Route::get('/buku/{id}', [BukuController::class, 'edit'])->name('buku.edit');
 Route::put('/buku/{id}', [BukuController::class, 'update'])->name('buku.update');
 
+Route::get('/send-mail', [SendEmailController::class,'index'])->name('kirim-email');
+Route::post('/post-email', [SendEmailController::class, 'store'])->name('post-email');

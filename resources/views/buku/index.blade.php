@@ -30,6 +30,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>Id</th>
+                    <th>foto</th>
                     <th>Judul Buku</th>
                     <th>Penulis</th>
                     <th>Harga</th>
@@ -44,6 +45,7 @@
                 @foreach($data_buku as $index => $buku)
                 <tr>
                     <td>{{ $buku->id }}</td>
+                    <td> <img src="{{ asset('storage/walpp.jpg') }}" width="150px"></td>
                     <td>{{ $buku->judul }}</td>
                     <td>{{ $buku->penulis }}</td>
                     <td>{{ "Rp.".number_format($buku->harga, 2, ',', '.') }}</td>

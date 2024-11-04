@@ -40,6 +40,17 @@
             <label for="tgl_terbit">Tanggal Terbit</label>
             <input type="date" name="tgl_terbit" class="form-control" id="tgl_terbit">
         </div>
+        
+        <div class="mb-3 row">
+            <label for="photo" class="col-md-4 col-form-label text-md-end text-start">Photo</label>
+            <div class="col-md-6">
+                <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo" name="photo">
+                @error('photo')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-success">Simpan</button>
         <a href="{{ url('/buku') }}" class="btn btn-secondary">Kembali</a>
     </form>
